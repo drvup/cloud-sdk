@@ -90,3 +90,10 @@ The example above can be shortened to:
   businessPartnerApi.schema.LAST_NAME.notEquals('Bob')
 )
 ```
+
+:::note Overwritten Filters
+
+Heads Up! You are not allowed to use the `.filter()` statement multiple times on the same `requestBuilder`. It will overwrite existing filters each time within the expressions of the latest `.filter()` statement.
+Using typescript, your compiler will not throw anykind of warning about having multiple `.filter()` statements attached to your `requestBuilder`, as it's technically okay, but not supported by the SDK. 
+
+:::
